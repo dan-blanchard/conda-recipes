@@ -1,11 +1,11 @@
 package:
-  name: jedi
-  version: !!str 0.8.0.final0
+  name: pympler
+  version: !!str 0.3.1
 
 source:
-  fn: jedi-0.8.0-final0.tar.gz
-  url: https://pypi.python.org/packages/source/j/jedi/jedi-0.8.0-final0.tar.gz
-  md5: 25ba4ee6160c2de751bd00c7a4f32bff
+  fn: Pympler-0.3.1.tar.gz
+  url: https://pypi.python.org/packages/source/P/Pympler/Pympler-0.3.1.tar.gz
+  md5: 906ce437f46fb30991007671a59d4319
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -16,9 +16,9 @@ source:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - jedi = jedi:main
+    # - pympler = pympler:main
     #
-    # Would create an entry point called jedi that calls jedi.main()
+    # Would create an entry point called pympler that calls pympler.main()
 
 
   # If this is a new build for the same version, increment the build
@@ -28,7 +28,6 @@ source:
 requirements:
   build:
     - python
-    - setuptools
 
   run:
     - python
@@ -36,11 +35,8 @@ requirements:
 test:
   # Python imports
   imports:
-    - jedi
-    - jedi.api
-    - jedi.evaluate
-    - jedi.evaluate.compiled
-    - jedi.parser
+    - pympler
+    - pympler.util
 
   #commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -55,9 +51,9 @@ test:
     # - nose
 
 about:
-  home: https://github.com/davidhalter/jedi
-  license: MIT License
-  summary: 'An autocompletion tool for Python that can be used for text editors.'
+  home: http://pythonhosted.org/Pympler/
+  license: ache Software License
+  summary: 'A development tool to measure, monitor and analyze the memory behavior of Python objects.'
 
 # See
 # http://docs.continuum.io/conda/build.html for
