@@ -9,6 +9,7 @@ source:
 
 build:
   entry_points:
+    - compute_eval_from_predictions = skll.utilities.compute_eval_from_predictions:main
     - filter_megam = skll.utilities.filter_megam:main
     - generate_predictions = skll.utilities.generate_predictions:main
     - join_megam = skll.utilities.join_megam:main
@@ -17,6 +18,7 @@ build:
     - run_experiment = skll.utilities.run_experiment:main
     - skll_convert = skll.utilities.skll_convert:main
     - summarize_results = skll.utilities.summarize_results:main
+    - compute_eval_from_predictions2 = skll.utilities.compute_eval_from_predictions:main [py2k]
     - filter_megam2 = skll.utilities.filter_megam:main [py2k]
     - generate_predictions2 = skll.utilities.generate_predictions:main [py2k]
     - join_megam2 = skll.utilities.join_megam:main [py2k]
@@ -25,6 +27,7 @@ build:
     - run_experiment2 = skll.utilities.run_experiment:main [py2k]
     - skll_convert2 = skll.utilities.skll_convert:main [py2k]
     - summarize_results2 = skll.utilities.summarize_results:main [py2k]
+    - compute_eval_from_predictions3 = skll.utilities.compute_eval_from_predictions:main [py3k]
     - filter_megam3 = skll.utilities.filter_megam:main [py3k]
     - generate_predictions3 = skll.utilities.generate_predictions:main [py3k]
     - join_megam3 = skll.utilities.join_megam:main [py3k]
@@ -33,7 +36,7 @@ build:
     - run_experiment3 = skll.utilities.run_experiment:main [py3k]
     - skll_convert3 = skll.utilities.skll_convert:main [py3k]
     - summarize_results3 = skll.utilities.summarize_results:main [py3k]
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -69,6 +72,7 @@ test:
     - skll
 
   commands:
+    - compute_eval_from_predictions --help
     - filter_megam --help
     - generate_predictions --help
     - join_megam --help
