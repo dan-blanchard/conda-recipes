@@ -1,23 +1,24 @@
 package:
-  name: pyparsing
-  version: 2.0.2
+  name: thriftpy
+  version: !!str 0.1.2
 
 source:
-  fn: pyparsing-2.0.2.tar.gz
-  url: https://pypi.python.org/packages/source/p/pyparsing/pyparsing-2.0.2.tar.gz
-  md5: b170c5d153d190df1a536988d88e95c1
+  fn: thriftpy-0.1.2.tar.gz
+  url: https://pypi.python.org/packages/source/t/thriftpy/thriftpy-0.1.2.tar.gz
+  md5: 1d22a753bd45ac5b026c5fc74c5860c1
 #  patches:
    # List any patch files here
    # - fix.patch
 
 # build:
-  # entry_points:
+  #preserve_egg_dir: True
+  #entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - pyparsing = pyparsing:main
+    # - thriftpy = thriftpy:main
     #
-    # Would create an entry point called pyparsing that calls pyparsing.main()
+    # Would create an entry point called thriftpy that calls thriftpy.main()
 
 
   # If this is a new build for the same version, increment the build
@@ -26,17 +27,23 @@ source:
 
 requirements:
   build:
+    - cython
     - python
+    - setuptools
+    - pyparsing >=2.0.2
 
   run:
+    - cython
     - python
+    - pyparsing >=2.0.2
 
 test:
   # Python imports
   imports:
-    - pyparsing
+    - thriftpy
+    - thriftpy.protocol
 
-  # commands:
+  #commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
@@ -49,8 +56,9 @@ test:
     # - nose
 
 about:
-  home: http://pyparsing.wikispaces.com/
+  home: http://lxyu.github.io/thriftpy/
   license: MIT License
+  summary: 'Pure python implemention of Apache Thrift.'
 
 # See
 # http://docs.continuum.io/conda/build.html for
