@@ -1,11 +1,11 @@
 package:
   name: skll
-  version: 0.25.0
+  version: 0.26.0
 
 source:
-  fn: skll-0.25.0.tar.gz
-  url: https://pypi.python.org/packages/source/s/skll/skll-0.25.0.tar.gz
-  md5: 4fd076ace7b485974acf76ae4a9ae421
+  fn: skll-0.26.0.tar.gz
+  url: https://pypi.python.org/packages/source/s/skll/skll-0.26.0.tar.gz
+  md5: 7444fb6f78d9c98f110dea2451148aa9
 
 build:
   entry_points:
