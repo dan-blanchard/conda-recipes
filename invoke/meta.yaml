@@ -1,68 +1,67 @@
 package:
-  name: fabric
-  version: 1.8.0
+  name: invoke
+  version: !!str 0.8.2
 
 source:
-  fn: Fabric-1.8.0.tar.gz [py2k]
-  url: https://pypi.python.org/packages/source/F/Fabric/Fabric-1.8.0.tar.gz [py2k]
-  md5: 1f195d16b05877767816617749d33eca [py2k]
-  git_url: https://github.com/pashinin/fabric [py3k]
-  git_branch: p33 [py3k]
-
+  fn: invoke-0.8.2.tar.gz
+  url: https://pypi.python.org/packages/source/i/invoke/invoke-0.8.2.tar.gz
+  md5: 5e541ad01f45b5a508992b1a58bc8251
 #  patches:
    # List any patch files here
    # - fix.patch
 
 build:
+  #preserve_egg_dir: True
   entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - fabric = fabric:main
+    # - invoke = invoke:main
     #
-    # Would create an entry point called fabric that calls fabric.main()
+    # Would create an entry point called invoke that calls invoke.main()
 
-    - fab = fabric.main:main
+    - invoke = invoke.cli:main
+    - inv = invoke.cli:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 1
+  # number: 1
 
 requirements:
   build:
     - python
     - setuptools
-    - paramiko
-    - six
 
   run:
     - python
-    - paramiko
-    - six
 
 test:
   # Python imports
   imports:
-    - fabfile
-    - fabric
-    - fabric.contrib
+    - invoke
+    - invoke.parser
+    - invoke.vendor
+    - invoke.vendor.fluidity
+    - invoke.vendor.lexicon
 
   commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
-    - fab --help
+    - invoke --help
+    - inv --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
 
-  requires:
+  # requires:
     # Put any additional test requirements here.  For example
-    - nose
+    # - nose
 
 about:
-  home: http://fabfile.org
-  license: BSD License
+  home: http://docs.pyinvoke.org
+  license:  BSD License
+  summary: 'Pythonic task execution'
 
 # See
 # http://docs.continuum.io/conda/build.html for
