@@ -50,7 +50,6 @@ requirements:
     - numpy
     - scipy
     - configparser [py2k]
-    - futures [py2k]
     - logutils [py2k]
 
   run:
@@ -63,7 +62,6 @@ requirements:
     - numpy
     - scipy
     - configparser [py2k]
-    - futures [py2k]
     - logutils [py2k]
 
 test:
