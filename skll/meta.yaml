@@ -1,11 +1,11 @@
 package:
   name: skll
-  version: 0.26.0
+  version: 0.27.0
 
 source:
-  fn: skll-0.26.0.tar.gz
-  url: https://pypi.python.org/packages/source/s/skll/skll-0.26.0.tar.gz
-  md5: 7444fb6f78d9c98f110dea2451148aa9
+  fn: skll-0.27.0.tar.gz
+  url: https://pypi.python.org/packages/source/s/skll/skll-0.27.0.tar.gz
+  md5: 9ff59041eb8e28e69486dca8db7bab91
 
 build:
   entry_points:
@@ -13,7 +13,6 @@ build:
     - filter_megam = skll.utilities.filter_megam:main
     - generate_predictions = skll.utilities.generate_predictions:main
     - join_megam = skll.utilities.join_megam:main
-    - megam_to_libsvm = skll.utilities.megam_to_libsvm:main
     - print_model_weights = skll.utilities.print_model_weights:main
     - run_experiment = skll.utilities.run_experiment:main
     - skll_convert = skll.utilities.skll_convert:main
@@ -22,7 +21,6 @@ build:
     - filter_megam2 = skll.utilities.filter_megam:main [py2k]
     - generate_predictions2 = skll.utilities.generate_predictions:main [py2k]
     - join_megam2 = skll.utilities.join_megam:main [py2k]
-    - megam_to_libsvm2 = skll.utilities.megam_to_libsvm:main [py2k]
     - print_model_weights2 = skll.utilities.print_model_weights:main [py2k]
     - run_experiment2 = skll.utilities.run_experiment:main [py2k]
     - skll_convert2 = skll.utilities.skll_convert:main [py2k]
@@ -31,12 +29,11 @@ build:
     - filter_megam3 = skll.utilities.filter_megam:main [py3k]
     - generate_predictions3 = skll.utilities.generate_predictions:main [py3k]
     - join_megam3 = skll.utilities.join_megam:main [py3k]
-    - megam_to_libsvm3 = skll.utilities.megam_to_libsvm:main [py3k]
     - print_model_weights3 = skll.utilities.print_model_weights:main [py3k]
     - run_experiment3 = skll.utilities.run_experiment:main [py3k]
     - skll_convert3 = skll.utilities.skll_convert:main [py3k]
     - summarize_results3 = skll.utilities.summarize_results:main [py3k]
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -49,6 +46,7 @@ requirements:
     - beautiful-soup
     - numpy
     - scipy
+    - pyyaml
     - configparser [py2k]
     - logutils [py2k]
 
@@ -61,6 +59,7 @@ requirements:
     - beautiful-soup
     - numpy
     - scipy
+    - pyyaml
     - configparser [py2k]
     - logutils [py2k]
 
@@ -74,7 +73,6 @@ test:
     - filter_megam --help
     - generate_predictions --help
     - join_megam --help
-    - megam_to_libsvm --help
     - print_model_weights --help
     - run_experiment --help
     - skll_convert --help
