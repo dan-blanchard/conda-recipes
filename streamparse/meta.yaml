@@ -1,14 +1,14 @@
 package:
   name: streamparse
-  version: !!str 0.0.13
+  version: !!str 1.0.0
 
 source:
-  fn: streamparse-0.0.13.tar.gz
-  url: https://pypi.python.org/packages/source/s/streamparse/streamparse-0.0.13.tar.gz
-  md5: 3c09c08747e0f68d6952996d03ed3288
-  patches:
-    # List any patch files here
-    - patch.txt
+  fn: streamparse-1.0.0.tar.gz
+  url: https://pypi.python.org/packages/source/s/streamparse/streamparse-1.0.0.tar.gz
+  md5: 986cdd30c8f8aabdc59ac38931e7f16d
+  # patches:
+  #   # List any patch files here
+  #   - patch.txt
 
 build:
   #preserve_egg_dir: True
