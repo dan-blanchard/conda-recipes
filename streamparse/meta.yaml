@@ -6,9 +6,9 @@ source:
   fn: streamparse-1.0.0.tar.gz
   url: https://pypi.python.org/packages/source/s/streamparse/streamparse-1.0.0.tar.gz
   md5: 986cdd30c8f8aabdc59ac38931e7f16d
-  # patches:
-  #   # List any patch files here
-  #   - patch.txt
+  patches:
+    # List any patch files here
+    - patch.txt
 
 build:
   #preserve_egg_dir: True
@@ -25,7 +25,7 @@ build:
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
-  number: 4
+  number: 5
 
 requirements:
   build:
