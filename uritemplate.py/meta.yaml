@@ -1,11 +1,11 @@
 package:
-  name: seaborn
-  version: !!str 0.4.0
+  name: uritemplate.py
+  version: !!str 0.3.0
 
 source:
-  fn: seaborn-0.4.0.tar.gz
-  url: https://pypi.python.org/packages/source/s/seaborn/seaborn-0.4.0.tar.gz
-  md5: b0a37352524c2363f78aa6780b6d246f
+  fn: uritemplate.py-0.3.0.tar.gz
+  url: https://pypi.python.org/packages/source/u/uritemplate.py/uritemplate.py-0.3.0.tar.gz
+  md5: 4dd14904ba502c6ff8d6276e004404de
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -16,9 +16,9 @@ source:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - seaborn = seaborn:main
+    # - uritemplate.py = uritemplate.py:main
     #
-    # Would create an entry point called seaborn that calls seaborn.main()
+    # Would create an entry point called uritemplate.py that calls uritemplate.py.main()
 
 
   # If this is a new build for the same version, increment the build
@@ -28,27 +28,14 @@ source:
 requirements:
   build:
     - python
-    - setuptools
-    - pandas
-    - scipy
-    - numpy
-    - matplotlib
 
   run:
     - python
-    - pandas
-    - scipy
-    - numpy
-    - matplotlib
-    - patsy
-    - statsmodels
 
 test:
   # Python imports
   imports:
-    - seaborn
-    - seaborn.external
-    - seaborn.tests
+    - uritemplate
 
   #commands:
     # You can put test commands to be run here.  Use this to test that the
@@ -63,9 +50,9 @@ test:
     # - nose
 
 about:
-  home: http://stanford.edu/~mwaskom/software/seaborn/
-  license:  BSD License
-  summary: 'Seaborn: statistical data visualization'
+  home: https://uritemplate.readthedocs.org
+  license: BSD
+  summary: 'URI templates'
 
 # See
 # http://docs.continuum.io/conda/build.html for
