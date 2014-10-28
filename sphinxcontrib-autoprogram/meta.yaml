@@ -1,26 +1,25 @@
 package:
-  name: pudb
-  version: !!str 2014.1
+  name: sphinxcontrib-autoprogram
+  version: !!str 0.1.1
 
 source:
-  fn: pudb-2014.1.tar.gz
-  url: https://pypi.python.org/packages/source/p/pudb/pudb-2014.1.tar.gz
-  md5: 8104db184c9553c568966cd67a7b1b2f
+  fn: sphinxcontrib-autoprogram-0.1.1.tar.gz
+  url: https://pypi.python.org/packages/source/s/sphinxcontrib-autoprogram/sphinxcontrib-autoprogram-0.1.1.tar.gz
+  md5: 5efdd7b7c67882a50eea6bbc40a96885
 #  patches:
    # List any patch files here
    # - fix.patch
 
-build:
-  preserve_egg_dir: True
-  entry_points:
+# build:
+  #preserve_egg_dir: True
+  #entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
     #
-    # - pudb = pudb:main
+    # - sphinxcontrib-autoprogram = sphinxcontrib-autoprogram:main
     #
-    # Would create an entry point called pudb that calls pudb.main()
+    # Would create an entry point called sphinxcontrib-autoprogram that calls sphinxcontrib-autoprogram.main()
 
-    - pudb = pudb.run:main
 
   # If this is a new build for the same version, increment the build
   # number. If you do not include this key, it defaults to 0.
@@ -30,25 +29,22 @@ requirements:
   build:
     - python
     - setuptools
-    - urwid >=1.1.1
-    - pygments >=1.0
+    - sphinx >=1.2
+    - argparse # [py26]
 
   run:
     - python
-    - setuptools
-    - urwid >=1.1.1
-    - pygments >=1.0
+    - sphinx >=1.2
 
 test:
   # Python imports
   imports:
-    - pudb
+    - sphinxcontrib
 
-  commands:
+  #commands:
     # You can put test commands to be run here.  Use this to test that the
     # entry points work.
 
-    - pudb --help
 
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
@@ -58,9 +54,9 @@ test:
     # - nose
 
 about:
-  home: http://pypi.python.org/pypi/pudb
-  license: MIT License
-  summary: 'A full-screen, console-based Python debugger'
+  home: https://bitbucket.org/birkenfeld/sphinx-contrib
+  license: BSD License
+  summary: 'Documenting CLI programs'
 
 # See
 # http://docs.continuum.io/conda/build.html for
