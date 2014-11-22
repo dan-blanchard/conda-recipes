@@ -1,22 +1,59 @@
 package:
   name: r
-  version: 3.1.0
+  version: 3.1.2
 
 source:
-  fn: R-3.1.0.tar.gz
-  url: http://cran.rstudio.com/src/base/R-3/R-3.1.0.tar.gz
+  fn: R-3.1.2.tar.gz
+  url: http://cran.cnr.berkeley.edu/src/base/R-3/R-3.1.2.tar.gz
+  sha1: 93809368e5735a630611633ac1fa99010020c5d6
+  patches:
+    - share-make-vars.mk.patch
+
+build:
+  rpaths:
+    - lib/R/lib/
+    - lib/
+  number: 2 # [linux]
+  detect_binary_files_with_prefix: true
 
 requirements:
   build:
-    - tk
+    - readline  # [not win]
+    - ncurses   # [not win]
+    - tk        # [not win]
+    - zlib      # [not win]
+    - gsl       # [not win]
+    - cairo     # [linux]
+    - pango     # [linux]
+    - jpeg      # [not win]
+    - libpng    # [not win]
+    - libtiff   # [not win]
+    - libxml2 # Not really sure if libxml2 is needed [not win]
+    - gcc       # [not win]
+    - pcre      # [not win]
+
+    - mingw     # [win]
+
   run:
-    - tk
+    - readline  # [not win]
+    - ncurses   # [not win]
+    - tk        # [not win]
+    - zlib      # [not win]
+    - cairo     # [linux]
+    - pango     # [linux]
+    - jpeg      # [not win]
+    - libpng    # [not win]
+    - libtiff   # [not win]
+    - libxml2   # [not win]
+    - gcc       # [not win]
+    - pcre      # [not win]
 
 test:
   commands:
     - R -h
     - R --version
     - Rscript --version
+    - Rscript -e  "cat('ok')"
 
 about:
   home: http://www.r-project.org/
