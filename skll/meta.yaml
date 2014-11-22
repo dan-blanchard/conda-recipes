@@ -13,7 +13,6 @@ build:
     - filter_features = skll.utilities.filter_features:main
     - generate_predictions = skll.utilities.generate_predictions:main
     - join_features = skll.utilities.join_features:main
-    - megam_to_libsvm = skll.utilities.megam_to_libsvm:main
     - print_model_weights = skll.utilities.print_model_weights:main
     - run_experiment = skll.utilities.run_experiment:main
     - skll_convert = skll.utilities.skll_convert:main
@@ -22,7 +21,6 @@ build:
     - filter_features2 = skll.utilities.filter_features:main [py2k]
     - generate_predictions2 = skll.utilities.generate_predictions:main [py2k]
     - join_features2 = skll.utilities.join_features:main [py2k]
-    - megam_to_libsvm2 = skll.utilities.megam_to_libsvm:main [py2k]
     - print_model_weights2 = skll.utilities.print_model_weights:main [py2k]
     - run_experiment2 = skll.utilities.run_experiment:main [py2k]
     - skll_convert2 = skll.utilities.skll_convert:main [py2k]
@@ -31,7 +29,6 @@ build:
     - filter_features3 = skll.utilities.filter_features:main [py3k]
     - generate_predictions3 = skll.utilities.generate_predictions:main [py3k]
     - join_features3 = skll.utilities.join_features:main [py3k]
-    - megam_to_libsvm3 = skll.utilities.megam_to_libsvm:main [py3k]
     - print_model_weights3 = skll.utilities.print_model_weights:main [py3k]
     - run_experiment3 = skll.utilities.run_experiment:main [py3k]
     - skll_convert3 = skll.utilities.skll_convert:main [py3k]
@@ -43,12 +40,13 @@ requirements:
     - python
     - joblib
     - setuptools
-    - scikit-learn
+    - scikit-learn 0.15.2
     - six
     - prettytable
     - beautiful-soup
     - numpy
     - scipy
+    - pyyaml
     - configparser [py2k]
     - futures [py2k]
     - logutils [py2k]
@@ -56,8 +54,9 @@ requirements:
 
   run:
     - python
+    - pyyaml
     - joblib
-    - scikit-learn
+    - scikit-learn 0.15.2
     - six
     - prettytable
     - beautiful-soup
@@ -80,7 +79,6 @@ test:
     - filter_features --help
     - generate_predictions --help
     - join_features --help
-    - megam_to_libsvm --help
     - print_model_weights --help
     - run_experiment --help
     - skll_convert --help
