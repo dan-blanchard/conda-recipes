@@ -33,7 +33,7 @@ build:
     - run_experiment3 = skll.utilities.run_experiment:main [py3k]
     - skll_convert3 = skll.utilities.skll_convert:main [py3k]
     - summarize_results3 = skll.utilities.summarize_results:main [py3k]
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -71,6 +71,8 @@ test:
   # Python imports
   imports:
     - skll
+    - skll.data
+    - skll.utilities
 
   commands:
     - compute_eval_from_predictions --help
