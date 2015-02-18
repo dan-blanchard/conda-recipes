@@ -11,7 +11,10 @@ source:
    # - fix.patch
 
 # build:
+<<<<<<< 7a18574b9da3f20986000d6258c1680f5c3424cf
   # noarch_python: True
+=======
+>>>>>>> Update cov-core recipe
   # preserve_egg_dir: True
   # entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
