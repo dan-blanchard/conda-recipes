@@ -1,16 +1,17 @@
 package:
   name: psycopg2
-  version: 2.5.1
+  version: "2.6"
 
 source:
-  fn: psycopg2-2.5.1.tar.gz
-  url: https://pypi.python.org/packages/source/p/psycopg2/psycopg2-2.5.1.tar.gz
-  md5: 1b433f83d50d1bc61e09026e906d84c7
+  fn: psycopg2-2.6.tar.gz
+  url: https://pypi.python.org/packages/source/p/psycopg2/psycopg2-2.6.tar.gz
+  md5: fbbb039a8765d561a1c04969bbae7c74
 #  patches:
    # List any patch files here
    # - fix.patch
 
 # build:
+  # preserve_egg_dir: True
   # entry_points:
     # Put any entry points (scripts to be generated automatically) here. The
     # syntax is module:function.  For example
@@ -52,6 +53,7 @@ test:
 about:
   home: http://initd.org/psycopg/
   license: GNU Library or Lesser General Public License (LGPL) or Zope Public License
+  summary: 'psycopg2 - Python-PostgreSQL Database Adapter'
 
 # See
 # http://docs.continuum.io/conda/build.html for
