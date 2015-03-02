@@ -1,0 +1,25 @@
+package:
+    name: apache-zookeeper
+    version: 3.4.6
+
+source:
+    fn: zookeeper-3.4.6.tar.gz
+    url: http://mirror.cogentco.com/pub/apache/zookeeper/current/zookeeper-3.4.6.tar.gz
+    md5: 971c379ba65714fd25dc5fe8f14e9ad1
+
+build:
+    number: 0
+
+requirements:
+    run:
+        - jdk
+
+test:
+    commands:
+        - zkServer.sh start
+        - zkServer.sh stop
+
+about:
+    home: http://zookeeper.apache.org/
+    license: Apache License v2.0
+
