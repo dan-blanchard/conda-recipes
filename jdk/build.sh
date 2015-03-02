@@ -12,6 +12,13 @@ if [ $(uname) = "Darwin" ]; then
 	hdiutil detach jdk_mount
 	cat java/jdk18031.pkg/Payload | cpio -zi
 	mv Contents/Home "$PREFIX/jdk"
+
+    # Make symlinks so that things are in the prefix's lib directory
+    mkdir -p "$PREFIX/lib"
+    cd "$PREFIX/lib"
+    for filename in ../jdk/lib/*; do
+        ln -s $filename $(basename $filename)
+    done
 else
 	if [ "$ARCH" = "32" ]; then
 		curl -v -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" -o jdk.tar.gz -L 'http://download.oracle.com/otn-pub/java/jdk/8u31-b13/jdk-8u31-linux-i586.tar.gz'
@@ -21,19 +28,19 @@ else
 
 	# Extract files
 	tar -xzvf jdk.tar.gz
-	mv jdk1.7.0_51 "$PREFIX/jdk"
+	mv jdk1.8.0_31 "$PREFIX/jdk"
+
+    # Make symlinks so that things are in the prefix's lib directory
+    mkdir -p "$PREFIX/lib"
+    cd "$PREFIX/lib"
+    for filename in $(find ../jdk/lib -maxdepth 3 -name "*.so"); do
+        ln -s $filename $(basename $filename)
+    done
 fi
 
 # Make symlinks so that things are in the prefix's bin directory
 mkdir -p "$PREFIX/bin"
 cd "$PREFIX/bin"
 for filename in ../jdk/bin/*; do
-	ln -s $filename $(basename $filename)
-done
-
-# Make symlinks so that things are in the prefix's lib directory
-mkdir -p "$PREFIX/lib"
-cd "$PREFIX/lib"
-for filename in ../jdk/lib/*; do
 	ln -s $filename $(basename $filename)
 done
