@@ -1,11 +1,11 @@
 package:
     name: apache-storm
-    version: 0.9.2
+    version: 0.9.3
 
 source:
-    fn: apache-storm-0.9.2-incubating.tar.gz
-    url: http://apache.petsads.us/storm/apache-storm-0.9.2-incubating/apache-storm-0.9.2-incubating.tar.gz
-    md5: 02f7b04a2ee11dc8b2c65862fe84df85
+    fn: apache-storm-0.9.3.tar.gz
+    url: http://mirrors.gigenet.com/apache/storm/apache-storm-0.9.3/apache-storm-0.9.3.tar.gz
+    md5: 43353ebf96a4dc13e8712d759eb202a1
 
 build:
     number: 0
