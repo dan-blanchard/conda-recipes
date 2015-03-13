@@ -8,7 +8,7 @@ source:
     md5: 971c379ba65714fd25dc5fe8f14e9ad1
 
 build:
-    number: 0
+    number: 1
 
 requirements:
     run:
@@ -17,6 +17,8 @@ requirements:
 test:
     commands:
         - zkServer.sh start
+        - sleep 30
+        - zkServer.sh status
         - zkServer.sh stop
 
 about:
