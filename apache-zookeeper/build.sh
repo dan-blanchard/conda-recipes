@@ -14,7 +14,7 @@ mkdir -p "$PREFIX/bin"
 cd "$PREFIX/bin"
 for filename in ../zookeeper/bin/*; do
     if [ ${filename: -4} != ".cmd" ]; then
-	   ln -s $filename $(basename $filename)
+       ln -s $filename $(basename $filename)
     fi
 done
 
@@ -22,5 +22,10 @@ done
 mkdir -p "$PREFIX/lib"
 cd "$PREFIX/lib"
 for filename in ../zookeeper/lib/*; do
-	ln -s $filename $(basename $filename)
+    if [ ${filename: -4} != ".jar" ]; then
+       ln -s $filename $(basename $filename)
+    fi
 done
+
+# Set CLASSPATH in java.env, since it won't work otherwise
+echo "export CLASSPATH=$PREFIX/zookeeper/*:$PREFIX/zookeeper/lib/*" > $PREFIX/etc/zookeeper/java.env
